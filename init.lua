@@ -72,3 +72,8 @@ function Timekeeper( this )
 
 	return self
 end
+
+globaltimer = Timekeeper({})
+minetest.register_globalstep(function(dtime)
+	globaltimer.on_step(dtime)
+end)
